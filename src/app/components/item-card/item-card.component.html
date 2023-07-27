@@ -1,0 +1,19 @@
+<div class="wrapper" *ngIf="item">
+  <div class="product-img">
+    <img src="{{ item.imgURL }}" height="420" width="327" />
+  </div>
+  <div class="product-info">
+    <div class="product-text">
+      <h1>{{ item.name }}</h1>
+      <p>{{ item.description }}</p>
+    </div>
+    <div class="product-price-btn">
+      <p>
+        <span>{{ item.price }}</span>
+        -VNĐ
+      </p>
+      <br />
+      <button type="button" (click)="addToCart(item)">add to cart</button>
+    </div>
+  </div>
+</div>
