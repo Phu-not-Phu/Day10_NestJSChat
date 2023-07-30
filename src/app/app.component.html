@@ -1,18 +1,2 @@
-<div id="backGround">
-  <img
-    src="https://product.hstatic.net/1000132959/product/screenshot_243_61185affa0714c569236afc3c1bc53b4_master.jpg"
-    alt="Background"
-    style="min-height: 100%; min-width: 100%; border: 0"
-  />
-</div>
 <app-navbar></app-navbar>
-
-<div class="container">
-  <app-myForm [listItem]="listItem"></app-myForm>
-</div>
-
-<div class="body">
-  <app-item-card *ngFor="let item of listItem" [item]="item"></app-item-card>
-</div>
-
-
+<router-outlet></router-outlet>

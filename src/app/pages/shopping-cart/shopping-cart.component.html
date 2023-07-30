@@ -1,0 +1,9 @@
+<div class="buttonBox">
+  <button id="deleteButt" (click)="xoaHet()">Xóa hết trong giỏ</button>
+  <h1 id="total">Tổng tiền: {{ tinhTong() }} VNĐ</h1>
+  <button id="payButt" (click)="thanhToan()">Thanh toán</button>
+</div>
+
+<div class="body">
+  <app-item-cart *ngFor="let item of listItem" [item]="item"></app-item-cart>
+</div>

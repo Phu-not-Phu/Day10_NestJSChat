@@ -1,20 +1,16 @@
 <div class="inputBox">
-  <div id="addItem">
-    <label>THÊM MÓN HÀNG VÀO SHOP</label>
-  </div>
   <form class="formStyle" (submit)="submit()" [formGroup]="myForm">
+    <label id="labelBox">THÊM HÀNG MỚI</label>
     <label>Tên món hàng: </label><br />
     <input type="text" formControlName="name" /><br />
     <label>Đơn giá: </label><br />
     <input type="number" formControlName="price" /><br />
     <label>Vào kho: </label><br />
     <input type="number" formControlName="inStock" /><br />
-
     <label>Mô tả: </label><br />
     <textarea type="text" formControlName="description"></textarea><br />
     <label>Link hình ảnh: </label><br />
     <textarea type="text" formControlName="imgURL"></textarea><br />
-
     <div class="addButton">
       <input id="addInShop" type="submit" value="THÊM VÀO SHOP" />
     </div>

@@ -1,15 +1,69 @@
-.navBar{
-  background-color: #743505;
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  // background-image: linear-gradient(to right, rgb(255, 255, 255), #743505);
+  background-color: black;
   width: 100%;
-  height: 10%;
   border-bottom: 8px solid orange;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-family: 'Quicksand', sans-serif;
 }
 
-span{
-  display: flex;
-  justify-content: center;
-  padding: 30px;
-  font-size: 2.5rem;
+span {
+  box-sizing: border-box;
+  font-size: 2rem;
   font-weight: bold;
   color: orange;
+  cursor: pointer;
+}
+
+img {
+  width: 30px;
+  cursor: pointer;
+}
+
+a {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: orange;
+  text-decoration: none;
+  margin: 0px 10px;
+  padding: 10px 10px;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+}
+
+//Animation Hover
+.circleBehind a:before,
+.circleBehind a:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  border: 4px solid white;
+  transform: translateX(-50%) translateY(-50%) scale(0.8);
+  border-radius: 50%;
+  background: transparent;
+  content: "";
+  opacity: 0;
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+.circleBehind a:after {
+  border-width: 2px;
+  transition: all 0.4s;
+}
+
+.circleBehind a:hover:before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%) scale(1);
+}
+
+.circleBehind a:hover:after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%) scale(1.3);
 }

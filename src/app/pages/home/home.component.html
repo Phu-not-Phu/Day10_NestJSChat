@@ -1,0 +1,27 @@
+<mdb-carousel [controls]="true">
+  <mdb-carousel-item>
+    <img
+      src="https://file.hstatic.net/1000160337/collection/1_d4ed55bcca75476088a0075f9e5948ed.jpg"
+      class="d-block w-100"
+      alt="..."
+    />
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <img
+      src="https://file.hstatic.net/1000160337/collection/benner_pop_up_33095aea20c745c8abb0005c9c01abf3.jpg"
+      class="d-block w-100"
+      alt="..."
+    />
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <img
+      src="https://file.hstatic.net/1000160337/collection/3_8f4fe2a5794e4bf999ee75a165e4b8de.jpg"
+      class="d-block w-100"
+      alt="..."
+    />
+  </mdb-carousel-item>
+</mdb-carousel>
+
+<div class="body">
+  <app-item-card *ngFor="let item of listItem" [item]="item"></app-item-card>
+</div>

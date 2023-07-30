@@ -1,0 +1,30 @@
+<div class="wrapper" *ngIf="item">
+  <div class="product-img">
+    <img src="{{ item.imgURL }}" height="120" width="90" />
+  </div>
+  <div class="product-info">
+    <div class="product-text">
+      <button class="closeButton" type="button" (click)="removeItem()">X</button>
+      <h1>{{ item.name }}</h1>
+    </div>
+    <div class="product-price-btn">
+      <p>
+        <span style="font-size: small; font-weight: bold">
+          Tồn kho: {{ item.inStock }}
+          <div class="addButton">
+            <form (submit)="reStock()" [formGroup]="addForm">
+              <input
+                type="number"
+                placeholder="Thêm hàng"
+                formControlName = "addStock"
+              />
+              <button id="addInShop" type="submit" >THÊM VÀO SHOP</button>
+            </form>
+          </div>
+        </span>
+        <br />
+        <span style="height: 35px">{{ item.price }}-VNĐ</span>
+      </p>
+    </div>
+  </div>
+</div>

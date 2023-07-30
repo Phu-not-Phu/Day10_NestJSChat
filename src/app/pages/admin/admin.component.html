@@ -1,0 +1,11 @@
+<div class="body">
+  <div class="list-item">
+    <app-item-warehouse
+      *ngFor="let item of listItem"
+      [item]="item"
+    ></app-item-warehouse>
+  </div>
+  <div id="form-container">
+    <app-myForm></app-myForm>
+  </div>
+</div>

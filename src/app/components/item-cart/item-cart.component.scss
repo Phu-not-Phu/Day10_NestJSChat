@@ -50,13 +50,13 @@
 
 .product-text h1,
 .product-price-btn p {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 .product-text h2 {
   margin: 0 0 47px 38px;
   font-size: 13px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   color: #d2d2d2;
@@ -66,7 +66,7 @@
 .product-text p {
   height: 125px;
   margin: 0 0 0 25px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   color: #8d8d8d;
   line-height: 1.7em;
   font-size: 15px;
@@ -84,9 +84,9 @@
 .product-price-btn p {
   display: inline-block;
   position: absolute;
-  top: -70px;
+  top: -130px;
   height: 30px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   margin: 0 0 0 20px;
   font-size: 28px;
   font-weight: lighter;
@@ -96,19 +96,19 @@
 span {
   display: inline-block;
   height: 50px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 34px;
 }
 
 .product-price-btn button {
   display: inline-block;
-  height: 50px;
-  width: 290px;
-  margin: 0 40px 0 16px;
+  height: 25px;
+  width: 295px;
+  margin: 5px 40px 0 16px;
   box-sizing: border-box;
   border: transparent;
   border-radius: 60px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
@@ -120,5 +120,27 @@ span {
 }
 
 .product-price-btn button:hover {
+  background-color: #975a00;
+}
+
+.closeButton {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin: 5px 40px 0 300px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  background-color: orange;
+  cursor: pointer;
+  outline: none;
+}
+.closeButton:hover {
   background-color: #975a00;
 }

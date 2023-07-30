@@ -1,0 +1,87 @@
+.body {
+  font-family: "Quicksand", sans-serif;
+  background-color: white;
+  border-top: 8px solid orange;
+  border-bottom: 8px solid orange;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+}
+
+.buttonBox {
+  background-image: url("https://wallpapercave.com/wp/wp8437290.jpg");
+  background-position: 100% 15%;
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-color: #a56d4e;
+  display: flex;
+  justify-content: center;
+  font-family: "Quicksand", sans-serif;
+}
+
+#deleteButt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 290px;
+  margin: 3%;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  background-color: orange;
+  cursor: pointer;
+  outline: none;
+}
+
+#deleteButt:hover {
+  border-color: red;
+  color: red;
+  fill: red;
+  background-color: #975a00;
+}
+
+#payButt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 290px;
+  margin: 3%;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  background-color: orange;
+  cursor: pointer;
+  outline: none;
+}
+
+#payButt:hover {
+  border-color: rgb(0 233 39);
+  color: rgb(0 233 39);
+  fill: rgb(0 233 39);
+  background-color: #975a00;
+}
+
+#total {
+  padding: 15px;
+  margin: 3%;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  border-radius: 20px;
+  text-align: center;
+  color: rgb(8, 237, 0);
+  background-color: white;
+}

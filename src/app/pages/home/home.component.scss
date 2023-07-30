@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+}
+
+.body {
+  background-color: white;
+  border-top: 8px solid orange;
+  border-bottom: 8px solid orange;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+}

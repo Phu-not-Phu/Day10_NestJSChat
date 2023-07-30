@@ -1,27 +1,36 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Item } from 'src/app/models/item.model';
-import { ActivatedRoute } from '@angular/router';
-import { CartService } from 'src/app/cart.service';
-
+import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-item-card',
   templateUrl: './item-card.component.html',
   styleUrls: ['./item-card.component.scss'],
 })
-export class ItemCardComponent implements OnInit {
+export class ItemCardComponent {
   @Input()
   item!: Item;
-  itemInCart: Item[] = [];
+  carts: Item[] = [];
 
-  constructor(
-    private route: ActivatedRoute,
-    private cartService: CartService
-  ) {}
+  constructor(protected dataService: DataService) {}
 
-  ngOnInit(): void {}
+  addToCart() {
+    let index = this.dataService.itemsCart.findIndex((cart) => {
+      return cart.id == this.item.id;
+    });
 
-  addToCart(product: Item) {
-    this.cartService.addToCart(product);
-    window.alert('Your product has been added to the cart!');
+    if (this.item.inStock! <= 0) {
+      alert('Xin lỗi! Đã hết hàng.');
+    } else {
+      if (index === -1) {
+        this.item.quantity = 1;
+        this.item.inStock -= 1;
+
+        this.dataService.addToCart(this.item);
+      } else {
+        this.dataService.moreItemToCart(index);
+        this.item.inStock -= 1;
+      }
+      alert('Thành công bỏ vào giỏ hàng.');
+    }
   }
 }

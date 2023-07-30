@@ -4,11 +4,15 @@
   </div>
   <div class="product-info">
     <div class="product-text">
+      <button class="closeButton" type="button" (click)="removeFromCart()">X</button>
       <h1>{{ item.name }}</h1>
-      <p>{{ item.description }}</p>
     </div>
     <div class="product-price-btn">
       <p>
+        <span style="font-size: 20px; font-weight: bold"
+          >Số lượng: {{ item.quantity }}</span
+        >
+        <br />
         <span style="font-size: 20px; font-weight: bold"
           >Hàng còn: {{ item.inStock }}</span
         >
@@ -16,7 +20,8 @@
         <span style="height: 30px">{{ item.price }}-VNĐ</span>
       </p>
       <br />
-      <button type="button" (click)="addToCart()">Thêm vào giỏ</button>
+      <button type="button" (click)="addToCart()">Thêm</button>
+      <button type="button" (click)="reduceFromCart()">Bớt</button>
     </div>
   </div>
 </div>
