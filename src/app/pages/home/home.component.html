@@ -23,5 +23,5 @@
 </mdb-carousel>
 
 <div class="body">
-  <app-item-card *ngFor="let item of listItem" [item]="item"></app-item-card>
+  <app-item-card *ngFor="let item of this.dataServices.listItem" [item]="item"></app-item-card>
 </div>

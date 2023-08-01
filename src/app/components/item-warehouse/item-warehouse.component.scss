@@ -1,7 +1,7 @@
 .wrapper {
   height: 120px;
   width: 450px;
-  margin: 10px 0 5px auto;
+  margin: 0 0 5px auto;
   border-radius: 7px 7px 7px 7px;
   /* VIA CSS MATIC https://goo.gl/cIbnS */
   -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
@@ -21,25 +21,29 @@
 
 .product-info {
   float: left;
-  height: 120px;
-  width: 350px;
+  height: 340px;
+  width: 360px;
   border-radius: 0 7px 10px 7px;
   background-color: #ffffff;
+  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1%;
 }
 
 .product-text {
   height: 70px;
   width: 430px;
-  margin: 0;
+  margin: 0 0 0 20px;
 }
 
 .product-text h1 {
-  margin: 0 0 0 20px;
   font-size: 34px;
-  color: #474747;
+  color: #000000;
   font-weight: bold;
   font-size: small;
-  width: 430;
+  width: 280px;
+  margin-bottom: 0;
 }
 
 .product-text h1,
@@ -49,30 +53,27 @@
 }
 
 .product-text h2 {
-  margin: 0 0 47px 38px;
   font-size: small;
   font-family: "Quicksand", sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: #d2d2d2;
-  letter-spacing: 0.2em;
+  font-weight: normal;
+  color: #000000;
 }
 
 .product-text p {
-  height: 125px;
-  margin: 0 0 0 25px;
+  width: 300px;
+  height: 120%;
   font-family: "Quicksand", sans-serif;
-  color: #8d8d8d;
-  line-height: 1.7em;
+  color: #000000;
   font-size: small;
   font-weight: lighter;
   overflow: hidden;
+  margin-bottom: 0;
 }
 
 .product-price-btn {
   height: 30px;
   width: 327px;
-  margin-top: 55px;
+  margin-top: 230px;
   position: relative;
 }
 
@@ -85,7 +86,7 @@
   margin: 0 0 0 20px;
   font-size: small;
   font-weight: lighter;
-  color: #474747;
+  color: #000000;
 }
 
 span {
@@ -115,27 +116,62 @@ span {
 }
 
 .product-price-btn button:hover {
-  background-color: #975a00;
+  background-color: #198e1b;
 }
 
 .closeButton {
   display: inline-block;
-  height: 20px;
-  width: 20px;
-  margin: 5px 40px 0 330px;
+  height: 25px;
+  width: 150px;
+  margin: 5px 40px 8px 410px;
   box-sizing: border-box;
   border: transparent;
   border-radius: 60px;
   font-family: "Quicksand", sans-serif;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: #ffffff;
-  background-color: orange;
+  background-color: #975a00;
+  cursor: pointer;
+  outline: none;
+  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 20px 32px 0px rgba(0, 0, 0, 0.15);
+}
+.closeButton:hover {
+  background-color: red;
+}
+
+#editInShop {
+  display: inline-block;
+  height: 20px;
+  width: 100px;
+  margin: 0 0 0 5px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: "Quicksand", sans-serif;
+  font-size: smaller;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #000000;
+  background-color: #F5DEB3;
   cursor: pointer;
   outline: none;
 }
-.closeButton:hover {
-  background-color: #975a00;
+
+#editInShop:hover {
+  background-color: #0e4b95;
+  color: white;
+}
+
+form{
+  width: 325px;
+}
+
+input{
+  border-radius: 5px 5px 5px 5px;
 }

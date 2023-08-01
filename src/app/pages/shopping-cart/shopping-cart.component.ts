@@ -11,7 +11,7 @@ export class ShoppingCartComponent {
   listItem: Item[] = [];
   ruSure = 'Bạn có chắc không?';
 
-  constructor(protected dataServices: DataService) {
+  constructor(public dataServices: DataService) {
     this.listItem = this.dataServices.itemsCart;
   }
 
@@ -29,6 +29,7 @@ export class ShoppingCartComponent {
     } else {
       if (confirm(this.ruSure) == true) {
         this.listItem = [];
+        this.dataServices.thanhToan();
         this.dataServices.emptyCart();
         alert('Thanh toán thành công! Cảm ơn bạn đã mua hàng.');
       }
@@ -37,7 +38,7 @@ export class ShoppingCartComponent {
 
   xoaHet() {
     if (this.dataServices.itemsCart.length == 0 || this.listItem.length == 0) {
-      alert('Không có gì để thanh toán.');
+      alert('Không có gì để xóa');
     } else {
       if (confirm(this.ruSure) == true) {
         this.listItem = [];

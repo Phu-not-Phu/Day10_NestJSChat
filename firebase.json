@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "Newbie",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

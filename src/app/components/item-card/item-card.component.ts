@@ -11,26 +11,21 @@ export class ItemCardComponent {
   item!: Item;
   carts: Item[] = [];
 
-  constructor(protected dataService: DataService) {}
+  constructor(public dataService: DataService) {}
 
   addToCart() {
     let index = this.dataService.itemsCart.findIndex((cart) => {
       return cart.id == this.item.id;
     });
 
+    let indexList = this.dataService.listItem.findIndex((list) => {
+      return list.id == this.item.id;
+    });
+
     if (this.item.inStock! <= 0) {
       alert('Xin lỗi! Đã hết hàng.');
     } else {
-      if (index === -1) {
-        this.item.quantity = 1;
-        this.item.inStock -= 1;
-
-        this.dataService.addToCart(this.item);
-      } else {
-        this.dataService.moreItemToCart(index);
-        this.item.inStock -= 1;
-      }
-      alert('Thành công bỏ vào giỏ hàng.');
+      this.dataService.addToCartTest(index, indexList);
     }
   }
 }

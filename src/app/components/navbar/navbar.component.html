@@ -9,7 +9,9 @@
   </span>
   <span class="circleBehind">
     <a (click)="homePage()">Trang Chủ</a>
-    <a (click)="adminPage()">Nhà Kho</a>
+    <a *ngIf="this.authSV.user != null" (click)="adminPage()">Nhà Kho</a>
     <a (click)="shoppingCartPage()">Giỏ Hàng</a>
+    <a *ngIf="this.authSV.user == null" (click)="login()">Đăng nhập</a>
+    <a *ngIf="this.authSV.user != null" (click)="logout()">Đăng xuất</a>
   </span>
 </div>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "first-project-1376c": {
+      "hosting": {
+        "Newbie": [
+          "first-project-1376c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "first-project-1376c"
+  }
+}

@@ -1,7 +1,7 @@
-<div class="body">
+<div class="body" *ngIf="this.authService.user != null">
   <div class="list-item">
     <app-item-warehouse
-      *ngFor="let item of listItem"
+      *ngFor="let item of this.dataServices.listItem"
       [item]="item"
     ></app-item-warehouse>
   </div>

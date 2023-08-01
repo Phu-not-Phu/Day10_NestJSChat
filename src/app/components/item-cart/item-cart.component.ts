@@ -13,7 +13,7 @@ export class ItemCartComponent {
   carts: Item[] = [];
   ruSure = 'Bạn có chắc không?';
 
-  constructor(protected dataService: DataService) {}
+  constructor(public dataService: DataService) {}
 
   addToCart() {
     let index = this.dataService.itemsCart.findIndex((cart) => {

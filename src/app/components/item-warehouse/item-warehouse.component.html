@@ -1,30 +1,89 @@
-<div class="wrapper" *ngIf="item">
-  <div class="product-img">
-    <img src="{{ item.imgURL }}" height="120" width="90" />
-  </div>
-  <div class="product-info">
-    <div class="product-text">
-      <button class="closeButton" type="button" (click)="removeItem()">X</button>
-      <h1>{{ item.name }}</h1>
+<div>
+  <button
+    class="closeButton"
+    type="button"
+    (click)="this.dataService.deleteOneData(item.id)"
+  >
+    XÓA KHỎI KHO HÀNG
+  </button>
+
+  <div class="wrapper">
+    <div class="product-img">
+      <img src="{{ item.imgURL }}" height="120" width="90" />
     </div>
-    <div class="product-price-btn">
-      <p>
-        <span style="font-size: small; font-weight: bold">
-          Tồn kho: {{ item.inStock }}
-          <div class="addButton">
-            <form (submit)="reStock()" [formGroup]="addForm">
+
+    <div class="product-info">
+      <div class="product-text">
+        <h1>{{ item.name }}</h1>
+        <form (submit)="updateName()" [formGroup]="addForm">
+          <input
+            type="string"
+            placeholder="Thay đổi tên."
+            formControlName="changeName"
+            value=""
+            style="width: 200px; text-align: center"
+          />
+          <button id="editInShop" type="submit">THAY ĐỔI</button>
+        </form>
+        <p>{{ item.description }}</p>
+        <form (submit)="updateDescription()" [formGroup]="addForm">
+          <input
+            type="string"
+            placeholder="Thay đổi mô tả"
+            formControlName="changeDescription"
+            value=""
+            style="width: 200px; text-align: center"
+          />
+          <button id="editInShop" type="submit">THAY ĐỔI</button>
+        </form>
+        <h1>ImageURL:</h1>
+        <form (submit)="updateImage()" [formGroup]="addForm">
+          <input
+            type="string"
+            placeholder="Gắn link ảnh ở đây"
+            formControlName="changePicURL"
+            value=""
+            style="width: 200px; text-align: center"
+          />
+          <button id="editInShop" type="submit">THAY ĐỔI</button>
+        </form>
+      </div>
+
+      <div class="product-price-btn">
+        <p>
+          <span style="font-size: small; font-weight: bold">
+            Tồn kho: {{ item.inStock }}
+            <div class="manyButton">
+              <form (submit)="addInStock()" [formGroup]="addForm">
+                <input
+                  type="number"
+                  placeholder="Thêm hàng"
+                  value=""
+                  formControlName="addStock"
+                  style="width: 100px; text-align: center"
+                />
+                <button id="addInShop" type="submit">THÊM VÀO SHOP</button>
+              </form>
+            </div>
+          </span>
+          <br />
+          <span style="height: 35px; padding-top: 5px; font-weight: bold"
+            >Giá tiền: {{ item.price }}-VNĐ
+            <form (submit)="updatePrice()" [formGroup]="addForm">
               <input
                 type="number"
-                placeholder="Thêm hàng"
-                formControlName = "addStock"
+                placeholder="Số tiền cần chỉnh"
+                value=""
+                formControlName="changePrice"
+                style="width: 100px; text-align: center"
               />
-              <button id="addInShop" type="submit" >THÊM VÀO SHOP</button>
+              <button id="editInShop" type="submit" style="font-size: small">
+                THAY ĐỔI
+              </button>
             </form>
-          </div>
-        </span>
-        <br />
-        <span style="height: 35px">{{ item.price }}-VNĐ</span>
-      </p>
+          </span>
+        </p>
+      </div>
     </div>
   </div>
 </div>

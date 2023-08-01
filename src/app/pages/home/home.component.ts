@@ -9,7 +9,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class HomeComponent {
   listItem: Item[] = [];
-  constructor(protected dataServices: DataService) {
+  constructor(public dataServices: DataService) {
     this.listItem = this.dataServices.listItem;
   }
 }
