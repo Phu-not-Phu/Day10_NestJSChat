@@ -1,27 +1,35 @@
-<div class="wrapper" *ngIf="item">
-  <div class="product-img">
-    <img src="{{ item.imgURL }}" height="420" width="327" />
-  </div>
-  <div class="product-info">
-    <div class="product-text">
-      <button class="closeButton" type="button" (click)="removeFromCart()">X</button>
-      <h1>{{ item.name }}</h1>
+<div>
+  <div class="wrapper" *ngIf="item">
+    <div class="product-img">
+      <img src="{{ item.imgURL }}" height="120" width="90" />
     </div>
-    <div class="product-price-btn">
-      <p>
-        <span style="font-size: 20px; font-weight: bold"
-          >Số lượng: {{ item.quantity }}</span
-        >
-        <br />
-        <span style="font-size: 20px; font-weight: bold"
-          >Hàng còn: {{ item.inStock }}</span
-        >
-        <br />
-        <span style="height: 30px">{{ item.price }}-VNĐ</span>
-      </p>
-      <br />
-      <button type="button" (click)="addToCart()">Thêm</button>
-      <button type="button" (click)="reduceFromCart()">Bớt</button>
+    <div class="product-info">
+      <button class="closeButton" type="button" (click)="removeFromCart()">
+        X
+      </button>
+      <div class="product-text">
+        <span>
+          <h1>{{ item.name }}</h1>
+          <div>
+            <p>
+              <span style="font-size: 10px; font-weight: bold"
+                >Số lượng: {{ item.quantity }} Hàng còn: {{ item.inStock }}
+                <button style="font-size: 20px; text-align: center;" id="addButt" type="button" (click)="moreToCart()">
+                  +
+                </button>
+                <button style="font-size: 20px; text-align: center;" id="lessButt" type="button" (click)="reduceFromCart()">
+                  -
+                </button>
+              </span>
+            </p>
+          </div>
+          <div>
+            <span style="height: 10px">{{ item.price }}-VNĐ</span>
+          </div>
+        </span>
+
+        <span> </span>
+      </div>
     </div>
   </div>
 </div>

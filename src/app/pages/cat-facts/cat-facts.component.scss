@@ -1,0 +1,9 @@
+.container {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  background-color: rgba(105, 52, 1, 0.742);
+  border-left: 8px solid orange;
+  border-right: 8px solid orange;
+  border-bottom: 5px solid orange;
+}

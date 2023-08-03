@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,13 +10,14 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class NavbarComponent {
   ruSure = 'Bạn có chắc không?';
-  constructor(protected router: Router, public authSV: AuthService) {}
+  constructor(protected router: Router, public authSV: AuthService, public dataService: DataService) {}
 
   linkJOJO() {
     window.alert('https://www.youtube.com/watch?v=AQx_KMoCgJU');
   }
 
   homePage() {
+    this.dataService.getData();
     this.router.navigate(['/']);
   }
 
@@ -24,6 +26,7 @@ export class NavbarComponent {
   }
 
   adminPage() {
+    this.dataService.getData();
     this.router.navigate(['/admin-page']);
   }
 
@@ -37,5 +40,9 @@ export class NavbarComponent {
     if (confirm(this.ruSure) == true) {
       this.authSV.logOut();
     }
+  }
+
+  goDaoMeo() {
+    this.router.navigate(['/cat-facts']);
   }
 }

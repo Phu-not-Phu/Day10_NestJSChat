@@ -7,7 +7,7 @@
   border-bottom: 8px solid orange;
   padding-top: 25px;
   padding-bottom: 25px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 span {
@@ -66,4 +66,10 @@ a {
 .circleBehind a:hover:after {
   opacity: 1;
   transform: translateX(-50%) translateY(-50%) scale(1.3);
+}
+
+.circleBehind img:hover {
+  border: 4px solid white;
+  border-radius: 50%;
+  transition: all 0.3s;
 }

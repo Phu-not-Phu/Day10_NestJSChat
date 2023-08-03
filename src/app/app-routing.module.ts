@@ -19,6 +19,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/admin/admin.module').then((m) => m.AdminModule),
   },
+  {
+    path: 'cat-facts',
+    loadChildren: () =>
+      import('./pages/cat-facts/cat-facts.module').then(
+        (m) => m.CatFactsModule
+      ),
+  },
 ];
 
 @NgModule({

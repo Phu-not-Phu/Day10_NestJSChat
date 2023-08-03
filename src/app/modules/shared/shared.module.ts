@@ -49,6 +49,8 @@ import { FormComponent } from 'src/app/components/form/form.component';
 import { ItemCartComponent } from 'src/app/components/item-cart/item-cart.component';
 import { ItemWarehouseComponent } from 'src/app/components/item-warehouse/item-warehouse.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     NavbarComponent,
@@ -56,6 +58,7 @@ import { ItemWarehouseComponent } from 'src/app/components/item-warehouse/item-w
     FormComponent,
     ItemCartComponent,
     ItemWarehouseComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -96,6 +99,7 @@ import { ItemWarehouseComponent } from 'src/app/components/item-warehouse/item-w
     MatTableModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   exports: [
     CommonModule,
@@ -141,6 +145,7 @@ import { ItemWarehouseComponent } from 'src/app/components/item-warehouse/item-w
     FormComponent,
     ItemCartComponent,
     ItemWarehouseComponent,
+    HttpClientModule
   ],
 })
 export class SharedModule {}

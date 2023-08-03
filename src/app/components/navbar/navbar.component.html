@@ -7,11 +7,16 @@
     />
     <span (click)="homePage()"> SHOP MÔ HÌNH NHÂN VẬT </span>
   </span>
-  <span class="circleBehind">
+  <span class="circleBehind" style="padding-right: 10px;">
     <a (click)="homePage()">Trang Chủ</a>
     <a *ngIf="this.authSV.user != null" (click)="adminPage()">Nhà Kho</a>
     <a (click)="shoppingCartPage()">Giỏ Hàng</a>
     <a *ngIf="this.authSV.user == null" (click)="login()">Đăng nhập</a>
     <a *ngIf="this.authSV.user != null" (click)="logout()">Đăng xuất</a>
+    <img
+      src="https://iconsplace.com/wp-content/uploads/_icons/ffa500/256/png/cat-icon-11-256.png"
+      alt=""
+      (click)="goDaoMeo()"
+    />
   </span>
 </div>

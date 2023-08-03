@@ -159,104 +159,26 @@ export class DataService {
     await addDoc(this.itemsCollectionCart, newItem);
   }
 
-  //----------------------------------------------------------------------
-  //Local Storage
-  addToCart(newItem: Item) {
-    this.itemsCart.push(newItem);
-    this.saveLocal();
+  async updateOneCart(id: string, item: Item) {
+    let q = query(this.itemsCollectionCart, where('id', '==', id));
+    let docSnap = await getDocs(q);
+    await updateDoc(docSnap.docs[0].ref, { ...item });
   }
 
-  addToCartTest(index: number, indexList: number) {
-    if (index === -1) {
-      let newItem = this.listItem[indexList];
-      newItem.quantity = 1;
-      newItem.inStock -= 1;
-      this.itemsCart.push(newItem);
-      console.log(this.itemsCart);
-      this.saveLocal();
-      alert('Thành công bỏ vào giỏ hàng.');
-    } else {
-      this.moreItemToCart(index);
-      this.itemsCart[index].inStock -= 1;
+  async deleteOneCart(id: string) {
+    if (confirm(this.ruSure) == true) {
+      let q = query(this.itemsCollectionCart, where('id', '==', id));
+      let docSnap = await getDocs(q);
+      await deleteDoc(docSnap.docs[0].ref);
+      window.alert('Xóa khỏi giỏ thành công!');
     }
   }
 
-  moreItemToCart(index: any) {
-    this.itemsCart[index].quantity += 1;
-    this.saveLocal();
+  async deleteAllCart(id: string) {
+    let q = query(this.itemsCollectionCart, where('id', '==', id));
+    let docSnap = await getDocs(q);
+    await deleteDoc(docSnap.docs[0].ref);
   }
 
-  reduceItemInCart(index: any) {
-    if (this.itemsCart[index].quantity > 0) {
-      this.itemsCart[index].quantity -= 1;
-      this.itemsCart[index].inStock += 1;
-      this.saveLocal();
-    }
-  }
-
-  removeFromCart(index: any) {
-    this.restoreOneItem(index);
-    this.itemsCart.splice(index, 1);
-    this.saveLocal();
-  }
-
-  removeFromWarehouse(indexList: any, indexCart: any) {
-    this.listItem.splice(indexList, 1);
-    this.itemsCart.splice(indexCart, 1);
-    this.saveLocal();
-  }
-
-  restoreOneItem(index: any) {
-    for (let j = 0; j < this.listItem.length; j++) {
-      if (this.listItem[j].id === this.itemsCart[index].id) {
-        this.listItem[j].inStock += this.itemsCart[index].quantity;
-        this.saveLocal();
-      }
-    }
-  }
-
-  restoreAllItem() {
-    for (let i = 0; i < this.itemsCart.length; i++) {
-      for (let j = 0; j < this.listItem.length; j++) {
-        if (this.listItem[j].id === this.itemsCart[i].id) {
-          this.listItem[j].inStock += this.itemsCart[i].quantity;
-          this.listItem[j].quantity = 0;
-          this.saveLocal();
-        }
-      }
-    }
-  }
-
-  thanhToan() {
-    for (let i = 0; i < this.itemsCart.length; i++) {
-      for (let j = 0; j < this.listItem.length; i++) {
-        if (this.listItem[j].id === this.itemsCart[i].id) {
-          let newItem = this.itemsCart[i];
-          this.updateOneData(newItem.id, newItem);
-          this.saveLocal();
-        }
-      }
-    }
-    this.emptyCart();
-  }
-
-  emptyCart() {
-    this.itemsCart = [];
-    this.saveLocal();
-  }
-
-  saveLocal() {
-    localStorage.setItem('itemsCart', JSON.stringify(this.itemsCart));
-  }
-
-  loadLocalCart() {
-    this.itemsCart = [];
-    let itemsCart = localStorage.getItem('itemsCart');
-    if (itemsCart) {
-      return JSON.parse(itemsCart!);
-    } else {
-      return [];
-    }
-  }
   //-----------------------------------------------------------------------------------
 }

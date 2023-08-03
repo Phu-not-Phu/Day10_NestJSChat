@@ -14,18 +14,24 @@ export class ItemCardComponent {
   constructor(public dataService: DataService) {}
 
   addToCart() {
-    let index = this.dataService.itemsCart.findIndex((cart) => {
-      return cart.id == this.item.id;
-    });
-
-    let indexList = this.dataService.listItem.findIndex((list) => {
-      return list.id == this.item.id;
-    });
-
     if (this.item.inStock! <= 0) {
       alert('Xin lỗi! Đã hết hàng.');
     } else {
-      this.dataService.addToCartTest(index, indexList);
+      let findItem = this.dataService.itemsCart.findIndex(
+        (cartItem) => cartItem.id === this.item.id
+      );
+      if (findItem !== -1) {
+        alert('Thành công bỏ vào giỏ hàng.');
+        this.item.quantity += 1;
+        this.item.inStock -= 1;
+
+        this.dataService.updateOneCart(this.item.id, this.item);
+      } else {
+        this.item.quantity += 1;
+        this.item.inStock -= 1;
+        this.dataService.addCartCloud(this.item);
+        alert('Thành công bỏ vào giỏ hàng.');
+      }
     }
   }
 }

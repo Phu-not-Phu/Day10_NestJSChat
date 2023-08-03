@@ -10,48 +10,32 @@ import { DataService } from 'src/app/services/data.service';
 export class ItemCartComponent {
   @Input()
   item!: Item;
-  carts: Item[] = [];
   ruSure = 'Bạn có chắc không?';
 
   constructor(public dataService: DataService) {}
 
-  addToCart() {
-    let index = this.dataService.itemsCart.findIndex((cart) => {
-      return cart.id == this.item.id;
-    });
-
+  moreToCart() {
     if (this.item.inStock <= 0) {
       alert('Xin lỗi! Đã hết hàng.');
     } else {
-      if (index === -1) {
-        this.item.quantity = 1;
-        this.item.inStock -= 1;
+      this.item.quantity++;
+      this.item.inStock--;
 
-        this.dataService.addToCart(this.item);
-      } else {
-        this.item.inStock -= 1;
-        this.dataService.moreItemToCart(index);
-      }
+      this.dataService.updateOneCart(this.item.id, this.item);
     }
   }
 
   reduceFromCart() {
-    let index = this.dataService.itemsCart.findIndex((cart) => {
-      return cart.id == this.item.id;
-    });
+    if (this.item.quantity > 0) {
+      this.item.quantity--;
+      this.item.inStock++;
 
-    this.dataService.reduceItemInCart(index);
+      this.dataService.updateOneCart(this.item.id, this.item);
+    }
   }
 
   removeFromCart() {
-    if (confirm(this.ruSure) == true) {
-      let index = this.dataService.itemsCart.findIndex((cart) => {
-        return cart.id == this.item.id;
-      });
-      if (index !== -1) {
-        this.dataService.removeFromCart(index);
-        alert('Đã xóa món hàng khỏi giỏ.');
-      }
-    }
+    this.item.quantity = 0;
+    this.dataService.deleteOneCart(this.item.id);
   }
 }
